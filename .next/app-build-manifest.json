@@ -21,15 +21,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboard)/restaurants/page.js"
     ],
-    "/(dashboard)/manage/restaurant/add/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(dashboard)/manage/restaurant/add/page.js"
-    ],
     "/(dashboard)/restaurant/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(dashboard)/restaurant/[slug]/page.js"
+    ],
+    "/(dashboard)/tables/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/tables/page.js"
+    ],
+    "/(dashboard)/manage/restaurant/[slug]/edit/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/manage/restaurant/[slug]/edit/page.js"
+    ],
+    "/(dashboard)/manage/restaurant/add/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(dashboard)/manage/restaurant/add/page.js"
     ]
   }
 }

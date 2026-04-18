@@ -11,11 +11,15 @@ import { PageWrapper } from "@/shared/components/custom/PageWrapper";
 import { toast } from "@/shared/components/ui/use-toast";
 import { Star, Phone, MapPin, User, Trash2, ArrowLeft, Pencil } from "lucide-react";
 import { DeleteConfirmModal } from "@/shared/components/custom/DeleteConfirmModal";
+import { RestaurantTablesSection } from "@/features/tables/components/RestaurantTablesSection";
+import { useTableStore } from "@/features/tables/store/table.store";
+
 
 export default function DetailsPage() {
   const params = useParams();
   const router = useRouter();
   const { getBySlug, deleteRestaurant, loadRestaurants, restaurants } = useRestaurantStore();
+  const { getTablesForRestaurant, addTable } = useTableStore();
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
   const [loading, setLoading] = useState(true);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -28,9 +32,19 @@ export default function DetailsPage() {
     if (params.slug && typeof params.slug === "string") {
       const data = getBySlug(params.slug);
       setRestaurant(data || null);
+
+      // Auto-seed 4 starter tables for new restaurants that have none
+      if (data) {
+        const existing = getTablesForRestaurant(data.slug);
+        if (existing.length === 0) {
+          ["T-01", "T-02", "T-03", "T-04"].forEach((name, i) =>
+            addTable(data.slug, name, [2, 4, 4, 6][i])
+          );
+        }
+      }
     }
     setLoading(false);
-  }, [params.slug, getBySlug, restaurants]);
+  }, [params.slug, getBySlug, restaurants, getTablesForRestaurant, addTable]);
 
   const handleDelete = () => {
     if (!restaurant) return;
@@ -129,7 +143,7 @@ export default function DetailsPage() {
         <div className="grid md:grid-cols-3 gap-6">
           <Card className="p-8 space-y-4 md:col-span-2 rounded-3xl border border-slate-100 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-xl">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-white/10 pb-4 flex items-center gap-2">
-              <MapPin size={18} className="text-indigo-500" /> Location & Address
+              <MapPin size={18} className="text-indigo-500" /> Location &amp; Address
             </h3>
             <p className="font-bold text-slate-800 dark:text-white text-lg">{restaurant.address?.line1 || "—"}</p>
             <p className="text-slate-600 dark:text-slate-300">{restaurant.address?.area}, {restaurant.address?.city}</p>
@@ -154,6 +168,9 @@ export default function DetailsPage() {
             </div>
           </Card>
         </div>
+
+        {/* ── Tables & Bookings ─────────────────────────────── */}
+        <RestaurantTablesSection restaurantSlug={restaurant.slug} />
 
       </div>
     </PageWrapper>

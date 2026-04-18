@@ -14,7 +14,7 @@ export const AppSidebar = () => {
   const navs = [
     { name: "Dashboard", href: "/", icon: <LayoutDashboard size={20} /> },
     { name: "Restaurants", href: "/restaurants", icon: <Utensils size={20} /> },
-    { name: "Add New", href: "/manage/restaurant/add", icon: <PlusCircle size={20} /> }
+    { name: "Add New", href: "/manage/restaurant/add", icon: <PlusCircle size={20} /> },
   ];
 
   return (
