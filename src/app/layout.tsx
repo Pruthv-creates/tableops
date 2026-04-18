@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system">
+        <ThemeProvider attribute="class" defaultTheme="light">
           <div className="relative min-h-screen bg-[#fafafa] dark:bg-[#020617] overflow-x-hidden text-slate-900 dark:text-slate-50 selection:bg-indigo-100 selection:text-indigo-900 transition-colors duration-300">
             
             {/* Grid */}
