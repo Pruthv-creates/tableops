@@ -1,6 +1,6 @@
 {
+  "/(dashboard)/manage/restaurant/add/page": "app/(dashboard)/manage/restaurant/add/page.js",
   "/(dashboard)/page": "app/(dashboard)/page.js",
   "/(dashboard)/restaurants/page": "app/(dashboard)/restaurants/page.js",
-  "/(dashboard)/restaurant/[slug]/page": "app/(dashboard)/restaurant/[slug]/page.js",
-  "/(dashboard)/manage/restaurant/add/page": "app/(dashboard)/manage/restaurant/add/page.js"
+  "/(dashboard)/restaurant/[slug]/page": "app/(dashboard)/restaurant/[slug]/page.js"
 }
