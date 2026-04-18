@@ -25,11 +25,11 @@ export const AppSidebar = () => {
       <div className="flex items-center justify-between mb-8 pt-2">
         {!isSidebarCollapsed && (
           <h2 className="font-extrabold tracking-tight text-2xl bg-gradient-to-r from-indigo-600 to-rose-500 bg-clip-text text-transparent drop-shadow-md px-2 truncate">
-            Gastronomy.
+            TableOps
           </h2>
         )}
         {isSidebarCollapsed && (
-          <div className="mx-auto text-xl font-black bg-gradient-to-r from-indigo-600 to-rose-500 bg-clip-text text-transparent">G.</div>
+          <div className="mx-auto text-xl font-black bg-gradient-to-r from-indigo-600 to-rose-500 bg-clip-text text-transparent">T.</div>
         )}
         <button 
           onClick={toggleSidebar}

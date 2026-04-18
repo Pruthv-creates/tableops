@@ -7,8 +7,8 @@ import { Toaster } from "@/shared/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Restaurant Manager",
-  description: "A production-ready restaurant manager",
+  title: "TableOps — Restaurant Management",
+  description: "Manage your restaurant portfolio with TableOps",
 };
 
 export default function RootLayout({
