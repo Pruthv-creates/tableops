@@ -67,6 +67,7 @@ export default function DetailsPage() {
   const rating = restaurant.rating ?? 4.5;
 
   return (
+    <>
     <PageWrapper>
       <div className="space-y-8">
 
@@ -163,5 +164,6 @@ export default function DetailsPage() {
       onConfirm={handleDelete}
       restaurantName={restaurant?.name}
     />
+    </>
   );
 }

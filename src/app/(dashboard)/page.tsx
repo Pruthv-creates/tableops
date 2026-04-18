@@ -82,12 +82,12 @@ export default function Home() {
             </div>
             <div className="flex gap-4 overflow-x-auto pb-4 hide-scrollbar">
               {[
-                { name: "North Indian", icon: "🍲" },
-                { name: "Chinese", icon: "🍜" },
-                { name: "Italian", icon: "🍕" },
-                { name: "South Indian", icon: "🥟" },
-                { name: "Cafe", icon: "☕" },
-                { name: "Fast Food", icon: "🍔" }
+                { name: "North Indian", icon: "🍲", count: 142 },
+                { name: "Chinese",      icon: "🍜", count: 98  },
+                { name: "Italian",      icon: "🍕", count: 76  },
+                { name: "South Indian", icon: "🥟", count: 130 },
+                { name: "Cafe",         icon: "☕", count: 64  },
+                { name: "Fast Food",    icon: "🍔", count: 210 }
               ].map((cat) => (
                  <div key={cat.name} className="flex-shrink-0 flex items-center gap-4 bg-white/70 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-xl rounded-2xl px-5 py-3 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10 transition-all cursor-pointer">
                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-white/10 flex items-center justify-center text-xl shadow-inner">
@@ -95,7 +95,7 @@ export default function Home() {
                    </div>
                    <div className="flex flex-col pr-2">
                      <span className="font-bold text-slate-800 dark:text-slate-200 text-sm">{cat.name}</span>
-                     <span className="text-[10px] text-slate-400 font-medium">{Math.floor(Math.random() * 200) + 10} Listings</span>
+                     <span className="text-[10px] text-slate-400 font-medium">{cat.count} Listings</span>
                    </div>
                  </div>
               ))}
